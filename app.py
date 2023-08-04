@@ -29,6 +29,10 @@ if file:
     st.success(f"Bashorat: {prediction}")
     st.info(f"Ehtimolligi: {probs[pred_id]*100:.1f}%")
 
+    # plotting
+    fig=px.bar(x=probs*100, y=model.dls.vocab)
+    st.plotly_chart(fig)
+
 
 
 
